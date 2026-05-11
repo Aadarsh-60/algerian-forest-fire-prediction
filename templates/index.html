@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Algerian Forest Fire Prediction</title>
+</head>
+<body>
+    <h1>Algerian Forest Fire Prediction</h1>
+
+    <form action="/predictdata" method="post">
+        <input type="number" step="any" name="Temperature" placeholder="Temperature" required>
+        <input type="number" step="any" name="RH" placeholder="Relative Humidity" required>
+        <input type="number" step="any" name="Ws" placeholder="Wind Speed" required>
+        <input type="number" step="any" name="Rain" placeholder="Rain" required>
+        <input type="number" step="any" name="FFMC" placeholder="FFMC" required>
+        <input type="number" step="any" name="DMC" placeholder="DMC" required>
+        <input type="number" step="any" name="ISI" placeholder="ISI" required>
+        <input type="number" step="any" name="Classes" placeholder="Classes" required>
+        <input type="number" step="any" name="Region" placeholder="Region" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result is defined %}
+        <h2>Prediction: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
